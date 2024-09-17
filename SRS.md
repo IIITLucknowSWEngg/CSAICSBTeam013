@@ -94,6 +94,42 @@ The application will operate on major web browsers (Chrome, Firefox, Safari, Edg
 - The system shall provide options to share documents via email or direct links.
 - The system shall allow users to set access permissions (view, comment, edit) for collaborators.
 - The system shall support both public and private sharing settings.
+## 3.4 Version History
 
+*Description*: Users can view and revert to previous versions of a document.
+
+*Functional Requirements*:
+
+- The system shall maintain a version history for each document.
+- The system shall allow users to view and restore previous versions of a document.
+- The system shall log changes made to documents in the version history.
+
+## 3.5 Commenting and Suggestions
+
+*Description*: Users can leave comments and suggestions on documents.
+
+*Functional Requirements*:
+
+- The system shall allow users to leave comments on specific parts of a document.
+- The system shall enable users to make suggestions that can be accepted or rejected.
+- The system shall provide notifications for comments and suggestions.
+
+## 4. External Interface Requirements
+
+## 4.1 User Interfaces
+
+- *Web Application*: The UI will be intuitive and responsive, offering easy navigation and access to key functionalities across various screen sizes.
+- *Admin Panel*: A web-based admin panel will provide a comprehensive dashboard for managing users, documents, and permissions.
+
+## 4.2 Hardware Interfaces
+
+- The system will interact with the following hardware on user devices:
+    - *Cameras*: For profile pictures or document images.
+    - *Microphones*: Optional for voice input features if integrated.
+
+## 4.3 Software Interfaces
+
+- *Third-Party APIs*: Integration with APIs for cloud storage services and authentication.
+- *Database*: The system will use a NoSQL database (e.g., MongoDB) for data storage and retrieval
 
 
