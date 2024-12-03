@@ -1,7 +1,7 @@
 # System Context Diagram
 
 ### Image
-![System Context Diagram](path_to_image.png)
+![System Context Diagram](System context diagram.jpg)
 
 ### PlantUML Code
 
@@ -50,7 +50,7 @@ package "Server Side" {
     NotificationService : Document Changes
   }
 
-  Admin -\[hidden\]-> BackendAPI
+  Admin --> BackendAPI : Manages users and platform
 }
 
 package "External Services" {
