@@ -33,3 +33,38 @@ package "Server Side" {
     DocStorage : Stores user documents
     DocStorage : Version History Storage
   }
+
+# Container Diagram
+
+```plantuml
+@startuml
+actor User
+actor Admin
+actor Developer
+
+node "Web Client" {
+    node "Web Application (UI)" as WebApp
+}
+
+node "Server Side" {
+    node "Backend API" as BackendAPI
+    node "Document Storage Service" as DocStorage
+    node "Authentication Service" as AuthService
+    node "Notification Service" as NotificationService
+}
+
+node "External Services" {
+    node "Cloud Storage" as CloudStorage
+    node "Third-Party Authentication" as ThirdPartyAuth
+}
+
+User --> WebApp : Uses UI for document tasks
+Admin --> WebApp : Manages platform
+WebApp --> BackendAPI : Sends API requests
+BackendAPI --> DocStorage : Accesses document data
+BackendAPI --> AuthService : Verifies user identity
+BackendAPI --> NotificationService : Sends notifications
+DocStorage --> CloudStorage : Stores documents
+AuthService --> ThirdPartyAuth : OAuth/Firebase Auth Integration
+
+@enduml
