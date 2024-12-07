@@ -219,3 +219,38 @@ ExternalServices --> [Authentication Services] : Manage Authentication Services
 
 @enduml
 ```
+# Deployment Diagram
+
+```plantuml
+@startuml
+node "Web Server" {
+  artifact "Web Application (UI)" as WebApp
+  WebApp --> "Backend API" : API Requests
+}
+
+node "Application Server" {
+  component "Backend API" as BackendAPI
+  BackendAPI --> "Document Storage Service" : Accesses Documents
+  BackendAPI --> "Authentication Service" : Verifies User Identity
+  BackendAPI --> "Notification Service" : Sends Notifications
+}
+
+node "Cloud Storage" {
+  component "Document Storage Service" as DocStorage
+}
+
+node "Authentication Provider" {
+  component "Third-Party Authentication" as ThirdPartyAuth
+}
+
+node "User Devices" {
+  artifact "Web Application (UI)" as WebAppUser
+  WebAppUser --> "Web Server" : HTTP Requests
+}
+
+User --> WebAppUser : Uses Web Application
+Admin --> WebAppUser : Manages Platform
+
+@enduml
+
+```
