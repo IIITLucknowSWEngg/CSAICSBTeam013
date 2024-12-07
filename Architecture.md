@@ -1,14 +1,14 @@
 # System Context Diagram
-![System Context Diagram](System%20context%20diagram.jpg)
+![System Context Diagram](SystemContextDiagram.jpg)
 
 # Container Diagram
-![Container Diagram](Container%20diagram.jpg)
+![Container Diagram](ContainerDiagram.jpg)
 
 # Component Diagram
 ![Component Diagram](ComponentDiagram.jpg)
 
 # User Component Diagram
-![User Component Diagram](usercomponent.jpg)
+![User Component Diagram](UserComponent.jpg)
 
 # Admin Component Diagram
 ![Admin Component Diagram](AdminComponent.jpg)
