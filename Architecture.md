@@ -12,3 +12,7 @@
 
 # Admin Component Diagram
 ![Admin Component Diagram](AdminComponent.jpg)
+
+# Deployment Diagram
+![Deployment Diagram](DeploymentDiagram.jpg)
+
