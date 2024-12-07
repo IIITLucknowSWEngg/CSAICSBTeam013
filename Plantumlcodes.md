@@ -130,3 +130,41 @@ CloudStorage --> BackupSystem : Archive Backups
 AnalyticsService --> APIGateway : Provide Metrics
 ThirdPartyAuth --> AuthService : OAuth Authentication
 @enduml
+```
+# User
+```plantuml
+@startuml
+actor "End User" as User
+
+package "User Interface" {
+    [Web Application (UI)] as WebApp
+    [Mobile Application] as MobileApp
+}
+
+package "User Services" {
+    [Document Management] as DocManagement
+    [Authentication Service] as AuthService
+    [Notification Service] as NotificationService
+}
+
+package "External Integrations" {
+    [Cloud Storage] as CloudStorage
+    [Third-Party Authentication] as ThirdPartyAuth
+}
+
+' Relationships between User and components
+User --> WebApp : Access Web Interface
+User --> MobileApp : Access Mobile Interface
+User --> DocManagement : Manage Documents
+User --> AuthService : Login/Authentication
+User --> NotificationService : Receive Notifications
+
+' Relationships between services
+WebApp --> DocManagement : View/Edit Documents
+MobileApp --> DocManagement : Sync Documents
+DocManagement --> CloudStorage : Store Documents
+AuthService --> ThirdPartyAuth : OAuth/Firebase Authentication
+NotificationService --> User : Send Notifications
+
+@enduml
+```
