@@ -3,14 +3,16 @@
 
 # Container Diagram
 ![Container Diagram](ContainerDiagram.jpg)
+### Admin Container Diagram
+![Container Diagram](AdminDiagram.jpg)
 
 # Component Diagram
 ![Component Diagram](ComponentDiagram.jpg)
 
-# User Component Diagram
+### User Component Diagram
 ![User Component Diagram](UserComponent.jpg)
 
-# Admin Component Diagram
+### Admin Component Diagram
 ![Admin Component Diagram](AdminComponent.jpg)
 
 # Deployment Diagram
