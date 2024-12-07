@@ -6,3 +6,6 @@
 
 # User Component Diagram
 ![User Component Diagram](usercomponent.jpg)
+
+# Admin Component Diagram
+![Admin Component Diagram](AdminComponent.jpg)
