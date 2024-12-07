@@ -131,7 +131,7 @@ AnalyticsService --> APIGateway : Provide Metrics
 ThirdPartyAuth --> AuthService : OAuth Authentication
 @enduml
 ```
-# User
+### User Component
 ```plantuml
 @startuml
 actor "End User" as User
@@ -165,6 +165,57 @@ MobileApp --> DocManagement : Sync Documents
 DocManagement --> CloudStorage : Store Documents
 AuthService --> ThirdPartyAuth : OAuth/Firebase Authentication
 NotificationService --> User : Send Notifications
+
+@enduml
+```
+### Admin Component
+```plantuml
+@startuml
+actor "Platform Admin" as Admin
+
+package "Admin Panel" {
+    [User Management] as UserManagement
+    [Document Management] as DocManagement
+    [System Monitoring] as SystemMonitoring
+    [Platform Settings] as PlatformSettings
+    [Reporting & Analytics] as ReportingAnalytics
+    [External Services] as ExternalServices
+}
+
+' Relationships between Admin and components
+Admin --> UserManagement : Manage Users
+Admin --> DocManagement : Manage Documents
+Admin --> SystemMonitoring : Monitor System Health
+Admin --> PlatformSettings : Configure Platform Settings
+Admin --> ReportingAnalytics : View Reports & Analytics
+Admin --> ExternalServices : Configure Integrations
+
+' User Management subsystem details
+UserManagement --> [View/Edit/Delete Users] : Manage Users
+UserManagement --> [Assign Roles] : Assign Roles
+UserManagement --> [Invite Users] : Invite New Users
+
+' Document Management subsystem details
+DocManagement --> [View/Flag/Delete Documents] : Manage Documents
+DocManagement --> [Version History] : View/Manage Version History
+
+' System Monitoring subsystem details
+SystemMonitoring --> [View Server Health] : Monitor Server Status
+SystemMonitoring --> [API Logs] : Review API Logs
+SystemMonitoring --> [Real-Time Usage Stats] : Monitor Real-Time Stats
+
+' Platform Settings subsystem details
+PlatformSettings --> [Branding Customization] : Configure Branding
+PlatformSettings --> [Feature Toggles] : Manage Features
+PlatformSettings --> [Email Configuration] : Configure Email Settings
+
+' Reporting & Analytics subsystem details
+ReportingAnalytics --> [Activity Reports] : Generate Reports
+ReportingAnalytics --> [Export Reports] : Export Reports
+
+' External Services subsystem details
+ExternalServices --> [Cloud Storage Configurations] : Configure Cloud Storage
+ExternalServices --> [Authentication Services] : Manage Authentication Services
 
 @enduml
 ```
