@@ -37,8 +37,6 @@ package "Server Side" {
 
 # Container Diagram
 
-![Container Diagram](#)
-
 ```plantuml
 @startuml
 actor User
