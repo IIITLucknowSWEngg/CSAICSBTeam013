@@ -71,6 +71,48 @@ AuthService --> ThirdPartyAuth : OAuth/Firebase Auth Integration
 @enduml
 
 ```
+### User
+```plantuml
+@startuml
+actor "User" as User
+
+package "User Side" {
+    node "Web Client" {
+        node "Web Application (UI)" as WebApp
+    }
+
+    node "Server Side" {
+        node "Backend API" as BackendAPI
+        node "Document Storage Service" as DocStorage
+        node "Authentication Service" as AuthService
+        node "Notification Service" as NotificationService
+    }
+
+    node "External Services" {
+        node "Cloud Storage" as CloudStorage
+        node "Third-Party Authentication" as ThirdPartyAuth
+    }
+}
+
+' User interacts with the WebApp through UI for document-related tasks
+User --> WebApp : Uses UI for document tasks
+
+' WebApp sends API requests to BackendAPI
+WebApp --> BackendAPI : Sends API requests
+
+' BackendAPI interacts with different services
+BackendAPI --> DocStorage : Accesses document data
+BackendAPI --> AuthService : Verifies user identity
+BackendAPI --> NotificationService : Sends notifications
+
+' Document storage service interacts with cloud storage
+DocStorage --> CloudStorage : Stores documents
+
+' Authentication service integrates with third-party services
+AuthService --> ThirdPartyAuth : OAuth/Firebase Auth Integration
+@enduml
+
+```
 ### Admin 
 ```plantuml
 @startuml
