@@ -177,6 +177,7 @@ This document outlines the test strategy, objectives, scope, and test cases for 
 
 ### Chai.js Code
 
+```
 javascript
 describe('User Registration', function() {
   it('should register user successfully', function() {
@@ -187,7 +188,7 @@ describe('User Registration', function() {
     expect(browser.getUrl()).to.include('/login');
   });
 });
-
+```
 ## 9. Conclusion
 
 This test plan ensures comprehensive coverage of all functionalities and system requirements. Execution of these test cases will ensure the platform is robust, scalable, and secure.
