@@ -246,7 +246,7 @@ describe('Admin Registration', function() {
 | *Expected Result*| The admin should be successfully logged in and redirected to the admin dashboard. |
 | *Status*         | Pending/Pass/Fail                                           |
 
-## Chai.js Code
+### Chai.js Code
 
 ```javascript
 describe('Admin Login', function() {
@@ -261,8 +261,6 @@ describe('Admin Login', function() {
 ```
 ## Feature: Document Creation
 
-## Test Case
-
 | *Test ID*       | *TC-DOC-001*                                              |
 |--------------------|-------------------------------------------------------------|
 | *Description*    | Verify that a user can successfully create a new document.  |
@@ -271,7 +269,7 @@ describe('Admin Login', function() {
 | *Expected Result*| The document should be successfully created and saved.     |
 | *Status*         | Pending/Pass/Fail                                           |
 
-## Test Code
+### Chai.js Code
 
 ```javascript
 describe('Document Creation', function() {
@@ -287,8 +285,6 @@ describe('Document Creation', function() {
 ```
 ## Feature: Real-Time Collaboration
 
-## Test Case
-
 | *Test ID*       | *TC-RTC-001*                                                |
 |--------------------|---------------------------------------------------------------|
 | *Description*    | Verify that multiple users can collaborate on the same document in real-time. |
@@ -297,7 +293,7 @@ describe('Document Creation', function() {
 | *Expected Result*| Changes made by User A should appear in User B's editor in real-time, and vice versa. |
 | *Status*         | Pending/Pass/Fail                                             |
 
-## Test Code
+### Chai.js Code
 
 ```javascript
 describe('Real-Time Collaboration', function() {
@@ -308,6 +304,52 @@ describe('Real-Time Collaboration', function() {
     expect(documentPage.userBGetText()).to.include('Hello from User A');
     documentPage.userBTypeText('Hello from User B');
     expect(documentPage.userAGetText()).to.include('Hello from User B');
+  });
+});
+```
+## Feature: Document Sharing
+
+| *Test ID*       | *TC-DOC-SHARE-001*                                          |
+|--------------------|---------------------------------------------------------------|
+| *Description*    | Verify that a document can be shared with another user.      |
+| *Precondition*   | User is logged in and has an existing document.              |
+| *Steps*          | 1. The user clicks on the "Share" button. <br> 2. The user enters another user's email and grants permissions. <br> 3. The user submits the sharing form. |
+| *Expected Result*| The document should be shared successfully, and the other user should have access. |
+| *Status*         | Pending/Pass/Fail                                            |
+
+### Chai.js Code
+
+```javascript
+describe('Document Sharing', function() {
+  it('should share a document successfully', function() {
+    documentPage.open();
+    documentPage.clickShare();
+    documentPage.enterEmail('collaborator@example.com');
+    documentPage.grantPermission('Edit');
+    documentPage.submitShare();
+    expect(documentPage.getShareConfirmation()).to.equal('Document shared successfully');
+  });
+});
+```
+
+## Feature: User Profile Management
+
+| *Test ID*       | *TC-UPM-001*                                               |
+|--------------------|--------------------------------------------------------------|
+| *Description*    | Verify that the user can successfully update their profile. |
+| *Precondition*   | User is logged in.                                          |
+| *Steps*          | 1. The user navigates to the profile page. <br> 2. The user updates their profile information (name, email). <br> 3. The user saves the changes. |
+| *Expected Result*| The profile should be updated successfully.                 |
+| *Status*         | Pending/Pass/Fail                                           |
+
+### Chai.js Code
+
+```javascript
+describe('User Profile Management', function() {
+  it('should update user profile successfully', function() {
+    profilePage.open();
+    profilePage.updateProfile('John Updated', 'johnupdated@example.com');
+    expect(profilePage.getSuccessMessage()).to.equal('Profile updated successfully');
   });
 });
 ```
