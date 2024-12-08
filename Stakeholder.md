@@ -1,123 +1,63 @@
-# Stakeholder Analysis Document
+# **Stakeholders.md**
 
-## 1. Introduction
-This document identifies and defines the key stakeholders involved in the project, their roles, responsibilities, qualifications, and interests in the system. Understanding stakeholders helps ensure all requirements are addressed and that the project aligns with their expectations.
-
----
-
-## 2. Stakeholder Overview
-
-| **Stakeholder Group**       | **Description**                                                                 |
-|------------------------------|---------------------------------------------------------------------------------|
-| End Users                   | Individuals using the system for document creation, collaboration, and sharing. |
-| Administrators              | Personnel managing the platform, users, and system settings.                   |
-| Developers                  | The team responsible for building, maintaining, and updating the system.       |
-| Business Owners             | Stakeholders funding and overseeing the project’s business objectives.         |
-| External Service Providers  | Providers of third-party tools such as cloud storage and authentication services. |
+## **1. Introduction**
+This document identifies and defines the key stakeholders involved in the Google Docs Clone project. Stakeholders are categorized into two groups: **Internal Stakeholders** and **External Stakeholders**, each playing a critical role in the development, implementation, and usage of the system.
 
 ---
 
-## 3. Stakeholder Details
+## **2. Internal Stakeholders**
 
-### 3.1 End Users
-- **Role:**  
-  End users are the primary consumers of the platform. They interact with the user interface to create, edit, and share documents.  
-- **Responsibilities:**  
-  - Use the platform for collaboration and document management.  
-  - Provide feedback to improve user experience.  
-- **Qualifications:**  
-  - Basic digital literacy and ability to use web/mobile platforms.  
-  - Experience with document creation and sharing tools.  
-- **Interests:**  
-  - Easy-to-use interface.  
-  - Real-time collaboration and version history.  
-  - Secure storage for sensitive documents.  
+### **Table of Internal Stakeholders**
+
+| **Stakeholder**   | **Role**                                | **Responsibilities**                                                                                   |
+|--------------------|------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| Developers         | Responsible for building and maintaining the application. | - Write, debug, and optimize code.<br>- Implement functional and non-functional requirements.<br>- Fix bugs and ensure performance. |
+| Project Managers   | Oversee project development.            | - Manage the development team.<br>- Assign tasks and monitor timelines.<br>- Resolve bottlenecks.       |
+| QA Testers         | Test the system for quality assurance.  | - Perform testing (functional, performance, etc.).<br>- Ensure cross-browser and device compatibility.<br>- Report bugs and suggest fixes. |
+| UI/UX Designers    | Design user interfaces and experiences. | - Create intuitive and responsive designs.<br>- Optimize for usability.<br>- Iterate designs based on user feedback. |
+| System Administrators | Manage deployment, infrastructure, and security. | - Maintain cloud servers and ensure uptime.<br>- Manage backups and disaster recovery.<br>- Implement security protocols. |
 
 ---
 
-### 3.2 Administrators
-- **Role:**  
-  Admins are responsible for managing users, monitoring system health, and configuring platform settings.  
-- **Responsibilities:**  
-  - Manage user accounts and roles.  
-  - Oversee document integrity and content moderation.  
-  - Monitor server performance and activity.  
-  - Generate system usage reports.  
-- **Qualifications:**  
-  - IT expertise or administrative experience in managing similar platforms.  
-  - Knowledge of system monitoring tools and analytics.  
-- **Interests:**  
-  - Robust admin panel with detailed analytics.  
-  - Tools to monitor and moderate the platform effectively.  
-  - Secure and reliable system operations.  
+## **3. External Stakeholders**
+
+### **Table of External Stakeholders**
+
+| **Stakeholder**           | **Role**                                     | **Responsibilities**                                                                                     |
+|----------------------------|-----------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| End Users                 | Use the system for document creation and collaboration. | - Create, edit, and share documents.<br>- Collaborate in real time.<br>- Provide feedback for improvements. |
+| Business Clients          | Organizations using the platform.             | - Purchase subscriptions for advanced features.<br>- Manage team collaboration.<br>- Report issues or suggest features. |
+| Administrators (Company Admins) | Manage team access and permissions for business clients. | - Set user permissions (view, edit, comment).<br>- Monitor sharing policies.<br>- Track team activity. |
+| Regulators (Compliance Authorities) | Ensure legal and regulatory compliance. | - Enforce data privacy laws (e.g., GDPR, CCPA).<br>- Audit system compliance.<br>- Suggest improvements for adherence to standards. |
+| API Service Providers     | Provide external services (e.g., cloud storage, authentication). | - Deliver reliable APIs.<br>- Ensure uptime.<br>- Collaborate during issue resolution. |
+| External Security Experts | Perform security audits and risk assessments. | - Audit the application for vulnerabilities.<br>- Suggest enhancements for data protection.<br>- Assist in meeting compliance requirements. |
 
 ---
 
-### 3.3 Developers
-- **Role:**  
-  Developers build and maintain the system, ensuring it is functional, scalable, and secure.  
-- **Responsibilities:**  
-  - Implement features based on requirements.  
-  - Integrate third-party services for authentication and storage.  
-  - Fix bugs and optimize system performance.  
-  - Perform regular maintenance and updates.  
-- **Qualifications:**  
-  - Proficiency in relevant programming languages (e.g., JavaScript, Python).  
-  - Experience in developing scalable web and mobile applications.  
-  - Familiarity with cloud integration and API usage.  
-- **Interests:**  
-  - Clear documentation of requirements and system design.  
-  - Efficient testing and deployment processes.  
-  - Feedback loops for continuous improvement.  
+## **4. Stakeholder Communication Plan**
+
+### **Internal Stakeholders**
+
+| **Stakeholder**      | **Frequency**  | **Communication Method**  | **Purpose**                               |
+|-----------------------|----------------|----------------------------|-------------------------------------------|
+| Developers            | Daily          | Standup Meetings, Slack   | Track progress and address blockers.      |
+| Project Managers      | Weekly         | Status Reports, Zoom      | Monitor milestones and resolve issues.    |
+| QA Testers            | Weekly         | Bug Reports, Jira         | Report bugs and testing progress.         |
+| UI/UX Designers       | As needed      | Design Reviews, Figma     | Ensure design meets usability goals.      |
+
+### **External Stakeholders**
+
+| **Stakeholder**           | **Frequency**       | **Communication Method**         | **Purpose**                               |
+|----------------------------|---------------------|-----------------------------------|-------------------------------------------|
+| End Users                 | As needed          | Feedback Forms, Email Surveys    | Gather feedback for improvements.         |
+| Business Clients          | Monthly            | Client Meetings, Support Tickets | Discuss enhancements and usage reports.   |
+| Regulators                | Annually or Ad hoc | Compliance Audits, Documentation | Ensure compliance with regulations.       |
+| API Service Providers     | As needed          | API Logs, Support Tickets        | Maintain integration reliability.         |
+| External Security Experts | Bi-annually        | Security Reports, Penetration Testing | Identify vulnerabilities and suggest fixes. |
 
 ---
 
-### 3.4 Business Owners
-- **Role:**  
-  Business owners fund the project and set strategic objectives for its development and deployment.  
-- **Responsibilities:**  
-  - Define the system’s vision, goals, and target market.  
-  - Ensure the project aligns with business objectives and ROI expectations.  
-  - Allocate resources for development and operations.  
-- **Qualifications:**  
-  - Strong business acumen and market understanding.  
-  - Knowledge of financial planning and resource allocation.  
-  - Strategic thinking for scaling and market penetration.  
-- **Interests:**  
-  - A competitive product that generates revenue.  
-  - User satisfaction and retention.  
-  - Scalability for future growth.  
+## **5. Conclusion**
+Both internal and external stakeholders are critical to the success of the Google Docs Clone project. The roles and responsibilities outlined above ensure clear communication, seamless development, and robust functionality of the system. Collaboration among all stakeholders will ensure the system meets user needs while adhering to high-quality standards.
 
 ---
-
-### 3.5 External Service Providers
-- **Role:**  
-  Providers of cloud storage (e.g., AWS S3) and authentication services (e.g., Firebase Auth).  
-- **Responsibilities:**  
-  - Ensure uptime and reliability of their services.  
-  - Provide APIs for seamless integration.  
-  - Secure user data and support compliance with industry standards.  
-- **Qualifications:**  
-  - Expertise in delivering cloud or authentication solutions.  
-  - Proven track record of service reliability and security.  
-  - Certification or compliance with industry standards (e.g., GDPR, SOC 2).  
-- **Interests:**  
-  - Continued usage of their services by the platform.  
-  - Clear communication for issue resolution and updates.  
-
----
-
-## 4. Stakeholder Communication Plan
-
-| **Stakeholder**         | **Communication Method**     | **Frequency**       | **Purpose**                                       |
-|--------------------------|------------------------------|---------------------|--------------------------------------------------|
-| End Users                | Surveys, Feedback Forms      | Quarterly           | Gather user feedback for system improvement.     |
-| Administrators           | Regular Meetings, Reports    | Monthly             | Review system performance and address issues.    |
-| Developers               | Agile Stand-ups, Code Reviews| Weekly              | Monitor development progress and resolve issues. |
-| Business Owners          | Progress Reports, Demos      | Bi-Weekly           | Showcase progress and align with business goals. |
-| External Service Providers| API Monitoring, Email       | As Needed           | Address service-related issues or changes.       |
-
----
-
-## 5. Conclusion
-This stakeholder document ensures all involved parties are identified and their qualifications and interests considered throughout the project lifecycle. Clear communication and collaboration with these stakeholders will be vital to the project’s success.
