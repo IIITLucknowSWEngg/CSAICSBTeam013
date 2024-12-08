@@ -2,7 +2,7 @@
 
 ### TEAM NAME: Horizons
 
-### PROJECT IDEA: Google Docs
+### PROJECT IDEA: [Google Docs](https://github.com/IIITLucknowSWEngg/Assignment/issues/21)
 
 ## TEAM MEMBERS:
 | S.No. | Name              | Roll No.   | GitHub Id           | GitHub Mail Id                |
