@@ -150,3 +150,7 @@ The system follows a *client-server architecture* with RESTful APIs and a micros
 - *CRUD:* Create, Read, Update, Delete
 - *RBAC:* Role-Based Access Control
 - *REST:* Representational State Transfer
+
+
+## Official Google Docs Design Reference:
+- [Google Docs Official Website](https://docs.google.com)
