@@ -188,6 +188,32 @@ describe('User Registration', function() {
   });
 });
 ```
+
+## Feature: User Login
+
+| *Test ID*       | *TC-LOG-001*                                               |
+|--------------------|--------------------------------------------------------------|
+| *Description*    | Verify that a user can successfully log in with valid credentials. |
+| *Precondition*   | User is on the login page.                                   |
+| *Steps*          | 1. The user enters valid credentials (email, password). <br> 2. The user submits the login form. |
+| *Expected Result*| The user should be successfully logged in and redirected to the dashboard. |
+| *Status*         | Pending/Pass/Fail                                            |
+
+### Chai.js Code
+
+```javascript
+describe('User Login', function() {
+  it('should login user successfully', function() {
+    loginPage.open();
+    loginPage.enterCredentials('jane@example.com', 'securePassword');
+    loginPage.submitLogin();
+    expect(loginPage.getWelcomeMessage()).to.include('Welcome, Jane Doe');
+    expect(browser.getUrl()).to.include('/dashboard');
+  });
+});
+
+```
+
 ## 9. Conclusion
 
 This test plan ensures comprehensive coverage of all functionalities and system requirements. Execution of these test cases will ensure the platform is robust, scalable, and secure.
