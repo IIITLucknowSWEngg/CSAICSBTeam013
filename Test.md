@@ -161,6 +161,33 @@ This document outlines the test strategy, objectives, scope, and test cases for 
 
 ---
 
-## 8. Conclusion
+# 8. Test Scenarios for Google Docs Clone
+
+---
+
+## Feature: User Registration
+
+| Test ID       | TC-REG-001                                                |
+|--------------------|---------------------------------------------------------------|
+| Description    | Verify that a user can successfully register with valid information. |
+| Precondition   | User is on the registration page.                             |
+| Steps          | 1. The user enters valid information (name, email, password). <br> 2. The user submits the registration form. |
+| Expected Result| The user should be successfully registered. <br> The user should be redirected to the login page. |
+| Status         | Pending/Pass/Fail                                             |
+
+### Chai.js Code
+
+javascript
+describe('User Registration', function() {
+  it('should register user successfully', function() {
+    registrationPage.open();
+    registrationPage.fillRegistrationForm('Jane Doe', 'jane@example.com', 'securePassword');
+    registrationPage.submitForm();
+    expect(registrationPage.getSuccessMessage()).to.equal('Registration successful');
+    expect(browser.getUrl()).to.include('/login');
+  });
+});
+
+## 9. Conclusion
 
 This test plan ensures comprehensive coverage of all functionalities and system requirements. Execution of these test cases will ensure the platform is robust, scalable, and secure.
