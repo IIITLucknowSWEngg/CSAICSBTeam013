@@ -18,7 +18,7 @@ This system is a platform that provides functionalities for both users and admin
 
 ### 1.4 References
 - [Project Requirements Document](Project_Requirements.md)
-- [System Context Diagram](System_Context_Diagram.md)
+- [System Context Diagram](SystemContextDiagram.md)
 - IEEE 1016-2009 Software Design Description Standard
 
 ---
@@ -65,7 +65,7 @@ The system follows a *client-server architecture* with RESTful APIs and a micros
 
 ## 4. Component Diagram
 ### Diagram
-![Component Diagram](component_diagram.jpg)
+![Component Diagram](ComponentDiagram.jpg)
 
 ---
 
@@ -98,11 +98,11 @@ The system follows a *client-server architecture* with RESTful APIs and a micros
 ### 6.1 User Interfaces
 #### *User Dashboard*
 - Displays user's documents, shared files, and recent activity.
-![user workflow Diagram](userDiagram.jpg)
+![user workflow Diagram](UserComponent.jpg)
 
 #### *Admin Dashboard*
 - Shows system stats, user management tools, and activity reports.
-![admin workflow Diagram](adminDiagram.jpg)
+![admin workflow Diagram](AdminComponent.jpg)
 
 ### 6.2 External Interfaces
 #### *APIs*
