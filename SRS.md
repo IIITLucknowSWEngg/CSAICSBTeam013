@@ -131,5 +131,9 @@ The application will operate on major web browsers (Chrome, Firefox, Safari, Edg
 
 - *Third-Party APIs*: Integration with APIs for cloud storage services and authentication.
 - *Database*: The system will use a NoSQL database (e.g., MongoDB) for data storage and retrieval
+- ---
+
+## Use Case Diagram
+![Use Case Diagram](UseCaseDiagram.png)
 
 
