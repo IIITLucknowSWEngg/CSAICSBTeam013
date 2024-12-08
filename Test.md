@@ -259,6 +259,58 @@ describe('Admin Login', function() {
   });
 });
 ```
+## Feature: Document Creation
+
+## Test Case
+
+| *Test ID*       | *TC-DOC-001*                                              |
+|--------------------|-------------------------------------------------------------|
+| *Description*    | Verify that a user can successfully create a new document.  |
+| *Precondition*   | User is logged in and on the document creation page.        |
+| *Steps*          | 1. The user clicks on the "Create New Document" button. <br> 2. The user enters content into the new document. <br> 3. The user saves the document. |
+| *Expected Result*| The document should be successfully created and saved.     |
+| *Status*         | Pending/Pass/Fail                                           |
+
+## Test Code
+
+```javascript
+describe('Document Creation', function() {
+  it('should create a new document successfully', function() {
+    documentPage.open();
+    documentPage.clickCreateNew();
+    documentPage.enterContent('This is a new document.');
+    documentPage.saveDocument();
+    expect(documentPage.getSuccessMessage()).to.equal('Document created and saved successfully');
+    expect(browser.getUrl()).to.include('/document');
+  });
+});
+```
+## Feature: Real-Time Collaboration
+
+## Test Case
+
+| *Test ID*       | *TC-RTC-001*                                                |
+|--------------------|---------------------------------------------------------------|
+| *Description*    | Verify that multiple users can collaborate on the same document in real-time. |
+| *Precondition*   | The document is shared with another user.                     |
+| *Steps*          | 1. User A opens the document. <br> 2. User B opens the same document. <br> 3. Both users make changes simultaneously. |
+| *Expected Result*| Changes made by User A should appear in User B's editor in real-time, and vice versa. |
+| *Status*         | Pending/Pass/Fail                                             |
+
+## Test Code
+
+```javascript
+describe('Real-Time Collaboration', function() {
+  it('should sync changes between users in real-time', function() {
+    documentPage.openAsUserA();
+    documentPage.openAsUserB();
+    documentPage.userATypeText('Hello from User A');
+    expect(documentPage.userBGetText()).to.include('Hello from User A');
+    documentPage.userBTypeText('Hello from User B');
+    expect(documentPage.userAGetText()).to.include('Hello from User B');
+  });
+});
+```
 
 ## 9. Conclusion
 
