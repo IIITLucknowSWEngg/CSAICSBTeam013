@@ -177,8 +177,7 @@ This document outlines the test strategy, objectives, scope, and test cases for 
 
 ### Chai.js Code
 
-```
-javascript
+```javascript
 describe('User Registration', function() {
   it('should register user successfully', function() {
     registrationPage.open();
