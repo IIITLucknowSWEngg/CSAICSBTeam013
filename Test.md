@@ -213,6 +213,52 @@ describe('User Login', function() {
 });
 
 ```
+## Feature: Admin Registration
+
+| *Test ID*       | *TC-ADM-REG-001*                                          |
+|--------------------|-------------------------------------------------------------|
+| *Description*    | Verify that an admin can successfully register with valid information. |
+| *Precondition*   | Admin is on the registration page.                          |
+| *Steps*          | 1. The admin enters valid information (name, email, password). <br> 2. The admin submits the registration form. |
+| *Expected Result*| The admin should be successfully registered and redirected to the admin login page. |
+| *Status*         | Pending/Pass/Fail                                           |
+
+### Chai.js Code
+
+```javascript
+describe('Admin Registration', function() {
+  it('should register admin successfully', function() {
+    adminRegistrationPage.open();
+    adminRegistrationPage.fillRegistrationForm('Admin User', 'admin@example.com', 'adminPassword');
+    adminRegistrationPage.submitForm();
+    expect(adminRegistrationPage.getSuccessMessage()).to.equal('Registration successful');
+    expect(browser.getUrl()).to.include('/admin-login');
+  });
+});
+```
+## Feature: Admin Login
+
+| *Test ID*       | *TC-ADM-LOG-001*                                          |
+|--------------------|-------------------------------------------------------------|
+| *Description*    | Verify that an admin can successfully log in with valid credentials. |
+| *Precondition*   | Admin is on the admin login page.                           |
+| *Steps*          | 1. The admin enters valid credentials (email, password). <br> 2. The admin submits the login form. |
+| *Expected Result*| The admin should be successfully logged in and redirected to the admin dashboard. |
+| *Status*         | Pending/Pass/Fail                                           |
+
+## Chai.js Code
+
+```javascript
+describe('Admin Login', function() {
+  it('should login admin successfully', function() {
+    adminLoginPage.open();
+    adminLoginPage.enterCredentials('admin@example.com', 'adminPassword');
+    adminLoginPage.submitLogin();
+    expect(adminLoginPage.getWelcomeMessage()).to.include('Welcome, Admin User');
+    expect(browser.getUrl()).to.include('/admin-dashboard');
+  });
+});
+```
 
 ## 9. Conclusion
 
