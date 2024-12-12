@@ -219,7 +219,7 @@ describe('User Profile Management', function() {
   });
 });
 ```
-## 4. Performance Testing
+## 4. Performance Testing (Non-Functional Requirements)
 
 ### Test Case: Concurrent Users
 | *Test ID*      | TC-PERF-001                    |
@@ -232,7 +232,7 @@ describe('User Profile Management', function() {
 
 ---
 
-## 5. Security Testing
+## 5. Security Testing (Non-Functional Requirements)
 
 ### Test Case: Unauthorized Access
 | *Test ID*      | TC-SEC-001                     |
