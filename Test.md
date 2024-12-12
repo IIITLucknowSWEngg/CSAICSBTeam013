@@ -171,9 +171,9 @@ This document outlines the test strategy, objectives, scope, and test cases for 
 |--------------------|---------------------------------------------------------------|
 | Description    | Verify that a user can successfully register with valid information. |
 | Precondition   | User is on the registration page.                             |
-| Steps          | 1. The user enters valid information (name, email, password). <br> 2. The user submits the registration form. |
-| Expected Result| The user should be successfully registered. <br> The user should be redirected to the login page. |
-| Status         | Pending/Pass/Fail                                             |
+| Steps          | 1. The user enters valid information (name, email, password). <br> 2. The user submits the registration form. <br> 3. The user checks their email inbox, opens the confirmation email, and clicks the confirmation link to activate their account. |
+| Expected Result| 1. The user should see a success message indicating "Registration Successful." <br> 2. The user should be redirected to the login page, displaying fields for entering login credentials. <br> 3. A database entry is created with user details, default status, and timestamp, updating to "active" after email confirmation. |
+| Status         | Pending/Pass/Fail  |
 
 ### Chai.js Code
 
@@ -220,7 +220,7 @@ describe('User Login', function() {
 | *Description*    | Verify that an admin can successfully register with valid information. |
 | *Precondition*   | Admin is on the registration page.                          |
 | *Steps*          | 1. The admin enters valid information (name, email, password). <br> 2. The admin submits the registration form. |
-| *Expected Result*| The admin should be successfully registered and redirected to the admin login page. |
+| *Expected Result*| 1. The admin should be successfully registered and redirected to the admin login page. <br> 2. A database entry is created with admin details, hashed password, and role set to "admin," along with a registration timestamp.|
 | *Status*         | Pending/Pass/Fail                                           |
 
 ### Chai.js Code
@@ -243,7 +243,7 @@ describe('Admin Registration', function() {
 | *Description*    | Verify that an admin can successfully log in with valid credentials. |
 | *Precondition*   | Admin is on the admin login page.                           |
 | *Steps*          | 1. The admin enters valid credentials (email, password). <br> 2. The admin submits the login form. |
-| *Expected Result*| The admin should be successfully logged in and redirected to the admin dashboard. |
+| *Expected Result*| 1. The admin should be successfully logged in and redirected to the admin dashboard. <br> 2. A session entry is created in the database with the admin ID, login timestamp, and session token. |
 | *Status*         | Pending/Pass/Fail                                           |
 
 ### Chai.js Code
@@ -266,7 +266,7 @@ describe('Admin Login', function() {
 | *Description*    | Verify that a user can successfully create a new document.  |
 | *Precondition*   | User is logged in and on the document creation page.        |
 | *Steps*          | 1. The user clicks on the "Create New Document" button. <br> 2. The user enters content into the new document. <br> 3. The user saves the document. |
-| *Expected Result*| The document should be successfully created and saved.     |
+| *Expected Result*| 1. The user should see a success message indicating "Document Created Successfully." <br> 2. The document should appear in the user's document list. <br> 3. A database entry is created with the document's title, content, creator's user ID, and timestamp. |
 | *Status*         | Pending/Pass/Fail                                           |
 
 ### Chai.js Code
@@ -290,7 +290,7 @@ describe('Document Creation', function() {
 | *Description*    | Verify that multiple users can collaborate on the same document in real-time. |
 | *Precondition*   | The document is shared with another user.                     |
 | *Steps*          | 1. User A opens the document. <br> 2. User B opens the same document. <br> 3. Both users make changes simultaneously. |
-| *Expected Result*| Changes made by User A should appear in User B's editor in real-time, and vice versa. |
+| *Expected Result*| 1. Edits made by each user should appear in real-time for all collaborators. <br> 2. A collaboration session entry is created in the database with document ID, user IDs, and timestamps. <br> 3. All changes are stored with proper versioning in the database. |
 | *Status*         | Pending/Pass/Fail                                             |
 
 ### Chai.js Code
@@ -314,7 +314,7 @@ describe('Real-Time Collaboration', function() {
 | *Description*    | Verify that a document can be shared with another user.      |
 | *Precondition*   | User is logged in and has an existing document.              |
 | *Steps*          | 1. The user clicks on the "Share" button. <br> 2. The user enters another user's email and grants permissions. <br> 3. The user submits the sharing form. |
-| *Expected Result*| The document should be shared successfully, and the other user should have access. |
+| *Expected Result*| 1. The recipient should receive a notification or email with a link to the shared document. <br> 2. A database entry is created with the shared document ID, sender ID, recipient email, and timestamp. |
 | *Status*         | Pending/Pass/Fail                                            |
 
 ### Chai.js Code
@@ -339,7 +339,7 @@ describe('Document Sharing', function() {
 | *Description*    | Verify that the user can successfully update their profile. |
 | *Precondition*   | User is logged in.                                          |
 | *Steps*          | 1. The user navigates to the profile page. <br> 2. The user updates their profile information (name, email). <br> 3. The user saves the changes. |
-| *Expected Result*| The profile should be updated successfully.                 |
+| *Expected Result*| 1. The user should see a success message indicating "Profile Updated Successfully." <br> 2. The updated information should reflect on the user's profile. <br> 3. The database entry for the user is updated with the new information and a modification timestamp                 |
 | *Status*         | Pending/Pass/Fail                                           |
 
 ### Chai.js Code
