@@ -184,7 +184,7 @@ The application will operate on major web browsers (Chrome, Firefox, Safari, Edg
 ### Happy Path Diagram
 The **Happy Path** diagram outlines the standard, error-free interaction flows in the **Google Docs Clone System**. It represents the smooth sequence of operations without any failures or exception scenarios:
 
-![Happy Path Diagram](HappyPath.png)
+![Happy Path Diagram](Diagrams/HappyPath.png)
 
 **Actors**:  
 - **End User**: Authenticates, creates documents, edits, collaborates in real-time, shares documents, and saves changes to cloud storage.  
@@ -208,7 +208,7 @@ The **Abuse Case** diagram explores malicious or unintended misuse of the **Goog
 ### Error Case Diagram
 The **Error Case** diagram depicts the possible failure paths and their causes when interacting with the **Google Docs Clone System**. It highlights how system malfunctions, network errors, and authentication failures affect system operations:
 
-![Error Case Diagram](ErrorCaseDiagram.png)
+![Error Case Diagram](Diagrams/ErrorCaseDiagram.png)
 
 **Actors**:  
 - **End User**: Faces login failures, document save errors, permission denial, and document unavailability.  
