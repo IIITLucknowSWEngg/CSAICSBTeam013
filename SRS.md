@@ -197,7 +197,7 @@ The **Happy Path** diagram outlines the standard, error-free interaction flows i
 ### Abuse Case Diagram
 The **Abuse Case** diagram explores malicious or unintended misuse of the **Google Docs Clone System**, focusing on security risks and insider threats:
 
-![Abuse Case Diagram](AbuseCaseDiagram.png)
+![Abuse Case Diagram](Diagrams/AbuseCaseDiagram.png)
 
 **Actors**:  
 - **Hacker**: Conducts phishing attacks and unauthorized access attempts.  
