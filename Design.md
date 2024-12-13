@@ -184,7 +184,7 @@ The Google Docs system adopts a **microservices architecture** to ensure modular
 | read_status       | Boolean    | Whether the notification was read     |
 | created_at        | Timestamp  | Timestamp of notification creation    |
 
-![Database Schema](DatabaseSchema.png)
+![Database Schema](Diagrams/DatabaseSchema.png)
 
 ---
 
