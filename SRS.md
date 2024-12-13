@@ -180,12 +180,40 @@ The application will operate on major web browsers (Chrome, Firefox, Safari, Edg
 - **Ethical Requirements:** Respect user privacy with clear consent for monitoring features.  
 
 ## 7. Use Case Diagram
-![Use Case Diagram](UseCaseDiagram.png)
 
 ### Happy Path Diagram
+The **Happy Path** diagram outlines the standard, error-free interaction flows in the **Google Docs Clone System**. It represents the smooth sequence of operations without any failures or exception scenarios:
+
 ![Happy Path Diagram](HappyPath.png)
 
+**Actors**:  
+- **End User**: Authenticates, creates documents, edits, collaborates in real-time, shares documents, and saves changes to cloud storage.  
+- **Admin**: Manages versions, monitors activity logs, and oversees administrative operations.  
+- **Authentication Service**: Authenticates users and validates credentials.  
+- **Cloud Storage**: Handles document saving, retrieval, and synchronization.
+  
+---
+
 ### Abuse Case Diagram
+The **Abuse Case** diagram explores malicious or unintended misuse of the **Google Docs Clone System**, focusing on security risks and insider threats:
+
 ![Abuse Case Diagram](AbuseCaseDiagram.png)
 
+**Actors**:  
+- **Hacker**: Conducts phishing attacks and unauthorized access attempts.  
+- **Insider Threat**: Leaks sensitive documents, tamper with data, or shares confidential documents with unauthorized users.
 
+---
+
+### Error Case Diagram
+The **Error Case** diagram depicts the possible failure paths and their causes when interacting with the **Google Docs Clone System**. It highlights how system malfunctions, network errors, and authentication failures affect system operations:
+
+![Error Case Diagram](ErrorCaseDiagram.png)
+
+**Actors**:  
+- **End User**: Faces login failures, document save errors, permission denial, and document unavailability.  
+- **Admin**: Experiences version history failures, audit log issues, and permission assignment errors.  
+- **Authentication Service**: Handles failures like invalid credentials, session timeouts, and locked accounts.  
+- **Cloud Storage**: Deals with storage failures, document corruption, and network-related issues.
+
+---
