@@ -65,7 +65,7 @@ As a Google Doc User
 - As an Admin I should receive notifications for important system events.
 
 ### 3.8 Admin Panel
-If I was an admin:
+If I were an admin:
 - I must be able to manage user accounts (approve, suspend, or delete users).
 - I must be able to view real-time data on document activity.
 - I must have access to document history and activity logs.
@@ -87,7 +87,7 @@ If I was an admin:
 
 ### 4.4 Reliability
 - The application must be available 99.9% of the time, with minimal downtime.
-- Backup systems should prevent My data loss in the event of a failure.
+- Backup systems should prevent No data loss in the event of a failure.
 
 ### 4.5 Scalability
 - The system must scale to support a growing number of docs users and documents without performance degradation.
