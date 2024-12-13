@@ -12,12 +12,15 @@
 ![ExternalServices](ContainerDiagram_ExternalServices.png)
 
 # Component Diagrams
-![Component Diagram](ComponentDiagram.jpg)
-### User Component Diagram
-![User Component Diagram](UserComponent.jpg)
-### Admin Component Diagram
-![Admin Component Diagram](AdminComponent.jpg)
+### Frontend Component Diagram
+![Frontend](ComponentDiagram_Frontend.png)
+### Backend Component Diagram
+![Backend](ComponentDiagram_Backend.png)
+### Database Component Diagram
+![Dadabase](ComponentDiagram_Database.png)
+### Extenal Services Component Diagram
+![ExternalServices](ComponentDiagram_ExternalServices.png)
 
 # Deployment Diagram
-![Deployment Diagram](DeploymentDiagram.jpg)
+![DeploymentDiagram](DeploymentDiagram.png)
 
