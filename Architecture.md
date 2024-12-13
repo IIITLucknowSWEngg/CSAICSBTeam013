@@ -1,5 +1,5 @@
 # System Context Diagram
-![System Context Diagram](SystemContextDiagram.jpg)
+![System Context Diagram](systemContextDiagram.png)
 
 # Container Diagram
 ![Container Diagram](ContainerDiagram.jpg)
