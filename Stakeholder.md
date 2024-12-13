@@ -9,13 +9,13 @@ This document identifies and defines the key stakeholders involved in the Google
 
 ### **Table of Internal Stakeholders**
 
-| **Stakeholder**   | **Role**                                | **Responsibilities**                                                                                   |
-|--------------------|------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| Developers         | Responsible for building and maintaining the application. | - Write, debug, and optimize code.<br>- Implement functional and non-functional requirements.<br>- Fix bugs and ensure performance. |
-| Project Managers   | Oversee project development.            | - Manage the development team.<br>- Assign tasks and monitor timelines.<br>- Resolve bottlenecks.       |
-| QA Testers         | Test the system for quality assurance.  | - Perform testing (functional, performance, etc.).<br>- Ensure cross-browser and device compatibility.<br>- Report bugs and suggest fixes. |
-| UI/UX Designers    | Design user interfaces and experiences. | - Create intuitive and responsive designs.<br>- Optimize for usability.<br>- Iterate designs based on user feedback. |
-| System Administrators | Manage deployment, infrastructure, and security. | - Maintain cloud servers and ensure uptime.<br>- Manage backups and disaster recovery.<br>- Implement security protocols. |
+| **Stakeholder**           | **Role**                         | **Responsibilities**                 | **Impact**           | **Qualifications**                |
+|----------------------------|----------------------------------|--------------------------------------|----------------------|-----------------------------------|
+| Developers         | Responsible for building and maintaining the application. | - Write, debug, and optimize code.<br>- Implement functional and non-functional requirements.<br>- Fix bugs and ensure performance. | HIGH - The quality and smooth functioning of the web application created directly depends on the work of the developers. | Web developers should be skilled in HTML, CSS, JavaScript, and frameworks like React or Node.js, with knowledge of databases (e.g., MySQL). A strong portfolio, problem-solving skills, and familiarity with tools like Git are essential. |
+| Project Managers   | Oversee project development.            | - Manage the development team.<br>- Assign tasks and monitor timelines.<br>- Resolve bottlenecks.       | HIGH - Day-to-day management of the project. | Certified in PMP or similar; experience in software project management. |
+| QA Testers         | Test the system for quality assurance.  | - Perform testing (functional, performance, etc.).<br>- Ensure cross-browser and device compatibility.<br>- Report bugs and suggest fixes. | HIGH - Ensures product stability and reliability. | Experienced in testing methodologies; proficient in QA tools like Selenium or Appium. |
+| UI/UX Designers    | Design user interfaces and experiences. | - Create intuitive and responsive designs.<br>- Optimize for usability.<br>- Iterate designs based on user feedback. | MEDIUM - Influences user satisfaction and usability. | Skilled in design tools (e.g., Figma, Adobe XD); background in user-centered design. |
+| System Administrators | Manage deployment, infrastructure, and security. | - Maintain cloud servers and ensure uptime.<br>- Manage backups and disaster recovery.<br>- Implement security protocols. | HIGH - Keeps track of progress and stores the work done. | Background in cyber security; good understanding of cloud storage. |
 
 ---
 
@@ -23,9 +23,9 @@ This document identifies and defines the key stakeholders involved in the Google
 
 ### **Table of External Stakeholders**
 
-| **Stakeholder**           | **Role**                                     | **Responsibilities**                                                                                     |
-|----------------------------|-----------------------------------------------|----------------------------------------------------------------------------------------------------------|
-| End Users                 | Use the system for document creation and collaboration. | - Create, edit, and share documents.<br>- Collaborate in real time.<br>- Provide feedback for improvements. |
+| **Stakeholder**           | **Role**                         | **Responsibilities**                 | **Impact**           | **Qualifications**                |
+|----------------------------|----------------------------------|--------------------------------------|----------------------|-----------------------------------|
+| Students/ Writers/ Employees | Use the system for document creation and collaboration. | - Create, edit, and share documents.<br>- Collaborate in real time.<br>- Provide feedback for improvements. |
 | Business Clients          | Organizations using the platform.             | - Purchase subscriptions for advanced features.<br>- Manage team collaboration.<br>- Report issues or suggest features. |
 | Administrators (Company Admins) | Manage team access and permissions for business clients. | - Set user permissions (view, edit, comment).<br>- Monitor sharing policies.<br>- Track team activity. |
 | Regulators (Compliance Authorities) | Ensure legal and regulatory compliance. | - Enforce data privacy laws (e.g., GDPR, CCPA).<br>- Audit system compliance.<br>- Suggest improvements for adherence to standards. |
