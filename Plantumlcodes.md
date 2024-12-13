@@ -2,73 +2,93 @@
 
 ```plantuml
 @startuml
-!define RECTANGLE class
-
 actor User
 actor Admin
-actor Developer
-
-package "Web Client" {
-  RECTANGLE "Web Application (UI)" as WebApp {
-    WebApp : User Interface
-    WebApp : Document Creation
-    WebApp : Real-Time Collaboration
-    WebApp : File Sharing
-    WebApp : Commenting and Suggestions
-    WebApp : Version History
-  }
+package "External Systems" {
+  [Google Drive API]
+  [Firebase Auth]
+}
+package "Google Docs System" {
+  [Frontend]
+  [Backend Services]
+  [Database]
 }
 
-package "Server Side" {
-  RECTANGLE "Backend API" as BackendAPI {
-    BackendAPI : Handles requests from WebApp
-    BackendAPI : User Authentication
-    BackendAPI : Document Management
-    BackendAPI : Collaboration Sync
-    BackendAPI : Commenting & Suggestion Handling
-    BackendAPI : Version History Management
-  }
+User --> [Frontend]
+Admin --> [Frontend]
+[Frontend] --> [Backend Services]
+[Backend Services] --> [Database]
+[Backend Services] --> [Google Drive API]
+[Backend Services] --> [Firebase Auth]
+@enduml
 
-  RECTANGLE "Document Storage Service" as DocStorage {
-    DocStorage : Stores user documents
-    DocStorage : Version History Storage
-  }
 ```
 
 # Container Diagram
 
 ```plantuml
 @startuml
-actor User
-actor Admin
-actor Developer
+!define RECTANGLE class
 
-node "Web Client" {
-    node "Web Application (UI)" as WebApp
+package "Frontend Components" {
+  RECTANGLE WebClient {
+    +displayDocumentsList(): void
+    +renderDocumentEditor(documentId: String): void
+    +handleRealTimeCollaboration(documentId: String): void
+    +manageUserAuthentication(): Boolean
+    +integrateNotifications(): void
+    +uploadFilesToCloud(): void
+  }
+
+  RECTANGLE MobileClient {
+    +displayDocumentsList(): void
+    +renderDocumentEditor(documentId: String): void
+    +handleRealTimeCollaboration(documentId: String): void
+    +manageUserAuthentication(): Boolean
+    +integrateNotifications(): void
+    +uploadFilesToCloud(): void
+    +optimizeForOfflineMode(): void
+  }
+
+  RECTANGLE SharedComponents {
+    +HeaderNavBar: ReusableComponent
+    +FooterNavBar: ReusableComponent
+    +SideMenu: ReusableComponent
+    +DocumentCard: ReusableComponent
+    +NotificationWidget: ReusableComponent
+  }
+
+  RECTANGLE RealTimeCollaborationModule {
+    +connectToWebSocket(documentId: String): Boolean
+    +syncCollaborativeEdits(): void
+    +resolveMergeConflicts(): Boolean
+  }
+
+  RECTANGLE AuthModule {
+    +handleLogin(email: String, password: String): Boolean
+    +handleLogout(): void
+    +validateSession(): Boolean
+  }
+
+  RECTANGLE NotificationModule {
+    +displayNotifications(): void
+    +listenForUpdates(): void
+  }
 }
 
-node "Server Side" {
-    node "Backend API" as BackendAPI
-    node "Document Storage Service" as DocStorage
-    node "Authentication Service" as AuthService
-    node "Notification Service" as NotificationService
-}
-
-node "External Services" {
-    node "Cloud Storage" as CloudStorage
-    node "Third-Party Authentication" as ThirdPartyAuth
-}
-
-User --> WebApp : Uses UI for document tasks
-Admin --> WebApp : Manages platform
-WebApp --> BackendAPI : Sends API requests
-BackendAPI --> DocStorage : Accesses document data
-BackendAPI --> AuthService : Verifies user identity
-BackendAPI --> NotificationService : Sends notifications
-DocStorage --> CloudStorage : Stores documents
-AuthService --> ThirdPartyAuth : OAuth/Firebase Auth Integration
-
+WebClient --> SharedComponents : "Uses reusable UI components"
+MobileClient --> SharedComponents : "Uses reusable UI components"
+WebClient --> RealTimeCollaborationModule : "Manages real-time collaboration"
+MobileClient --> RealTimeCollaborationModule : "Manages real-time collaboration"
+WebClient --> AuthModule : "Authenticates user"
+MobileClient --> AuthModule : "Authenticates user"
+WebClient --> NotificationModule : "Handles in-app notifications"
+MobileClient --> NotificationModule : "Handles in-app notifications"
+RealTimeCollaborationModule --> WebSocketServer : "Syncs changes in real-time"
+AuthModule --> Backend.AuthService : "Authenticates with backend"
+NotificationModule --> Backend.NotificationService : "Fetches notifications"
 @enduml
+
 
 ```
 ### User
@@ -235,126 +255,148 @@ AnalyticsService --> APIGateway : Provide Metrics
 ThirdPartyAuth --> AuthService : OAuth Authentication
 @enduml
 ```
-### User Component
+### Frontend Component
 ```plantuml
 @startuml
-actor "End User" as User
+title Google Docs System - C4 Level 2: Frontend Container
 
-package "User Interface" {
-    [Web Application (UI)] as WebApp
-    [Mobile Application] as MobileApp
+actor "User" as User #lightblue
+actor "Admin" as Admin #lightblue
+
+package "Frontend" {
+  [Web App] <<container>> #lightgreen
 }
 
-package "User Services" {
-    [Document Management] as DocManagement
-    [Authentication Service] as AuthService
-    [Notification Service] as NotificationService
+package "Backend Services" {
+  [Authentication Service] <<container>> #lightgreen
+  [Document Management Service] <<container>> #lightgreen
+  [Notification Service] <<container>> #lightgreen
 }
 
-package "External Integrations" {
-    [Cloud Storage] as CloudStorage
-    [Third-Party Authentication] as ThirdPartyAuth
+User --> [Web App] : "Access via Browser"
+Admin --> [Web App] : "Access Admin Dashboard"
+[Web App] --> [Authentication Service] : "Login and User Authentication"
+[Web App] --> [Document Management Service] : "Edit and Share Documents"
+[Web App] --> [Notification Service] : "Fetch Notifications"
+
+@enduml
+
+```
+
+### Backend Component
+```plantuml
+@startuml
+title Google Docs System - C4 Level 2: Backend Services Container
+
+actor "Frontend" as Frontend #lightblue
+package "Backend Services" {
+  [Authentication Service] <<container>> #lightgreen
+  [Document Management Service] <<container>> #lightgreen
+  [Notification Service] <<container>> #lightgreen
+  [Analytics Service] <<container>> #lightgreen
 }
 
-' Relationships between User and components
-User --> WebApp : Access Web Interface
-User --> MobileApp : Access Mobile Interface
-User --> DocManagement : Manage Documents
-User --> AuthService : Login/Authentication
-User --> NotificationService : Receive Notifications
+package "Database" {
+  [User Database] <<container>> #lightgrey
+  [Document Database] <<container>> #lightgrey
+}
 
-' Relationships between services
-WebApp --> DocManagement : View/Edit Documents
-MobileApp --> DocManagement : Sync Documents
-DocManagement --> CloudStorage : Store Documents
-AuthService --> ThirdPartyAuth : OAuth/Firebase Authentication
-NotificationService --> User : Send Notifications
+Frontend --> [Authentication Service] : "Authenticate Users"
+Frontend --> [Document Management Service] : "Handle Document CRUD"
+Frontend --> [Notification Service] : "Retrieve Notifications"
+[Authentication Service] --> [User Database] : "Verify User Credentials"
+[Document Management Service] --> [Document Database] : "Store Document Data"
+[Notification Service] --> [User Database] : "Fetch User Notification Preferences"
+
+@enduml
+
+```
+### Database Component
+```plantuml
+@startuml
+title Google Docs System - C4 Level 2: Database Container
+
+package "Database" {
+  [User Database] <<container>> #lightgrey
+  [Document Database] <<container>> #lightgrey
+  [Notifications Collection] <<container>> #lightgrey
+}
+
+package "Backend Services" {
+  [Authentication Service] <<container>> #lightgreen
+  [Document Management Service] <<container>> #lightgreen
+  [Notification Service] <<container>> #lightgreen
+}
+
+[Authentication Service] --> [User Database] : "User Authentication Data"
+[Document Management Service] --> [Document Database] : "Store and Retrieve Documents"
+[Notification Service] --> [Notifications Collection] : "Store Notifications"
+[Document Management Service] --> [User Database] : "Access User Metadata"
 
 @enduml
 ```
-### Admin Component
-```plantuml
-@startuml
-actor "Platform Admin" as Admin
-
-package "Admin Panel" {
-    [User Management] as UserManagement
-    [Document Management] as DocManagement
-    [System Monitoring] as SystemMonitoring
-    [Platform Settings] as PlatformSettings
-    [Reporting & Analytics] as ReportingAnalytics
-    [External Services] as ExternalServices
-}
-
-' Relationships between Admin and components
-Admin --> UserManagement : Manage Users
-Admin --> DocManagement : Manage Documents
-Admin --> SystemMonitoring : Monitor System Health
-Admin --> PlatformSettings : Configure Platform Settings
-Admin --> ReportingAnalytics : View Reports & Analytics
-Admin --> ExternalServices : Configure Integrations
-
-' User Management subsystem details
-UserManagement --> [View/Edit/Delete Users] : Manage Users
-UserManagement --> [Assign Roles] : Assign Roles
-UserManagement --> [Invite Users] : Invite New Users
-
-' Document Management subsystem details
-DocManagement --> [View/Flag/Delete Documents] : Manage Documents
-DocManagement --> [Version History] : View/Manage Version History
-
-' System Monitoring subsystem details
-SystemMonitoring --> [View Server Health] : Monitor Server Status
-SystemMonitoring --> [API Logs] : Review API Logs
-SystemMonitoring --> [Real-Time Usage Stats] : Monitor Real-Time Stats
-
-' Platform Settings subsystem details
-PlatformSettings --> [Branding Customization] : Configure Branding
-PlatformSettings --> [Feature Toggles] : Manage Features
-PlatformSettings --> [Email Configuration] : Configure Email Settings
-
-' Reporting & Analytics subsystem details
-ReportingAnalytics --> [Activity Reports] : Generate Reports
-ReportingAnalytics --> [Export Reports] : Export Reports
-
-' External Services subsystem details
-ExternalServices --> [Cloud Storage Configurations] : Configure Cloud Storage
-ExternalServices --> [Authentication Services] : Manage Authentication Services
-
-@enduml
-```
-# Deployment Diagram
+### Container: External Systems
 
 ```plantuml
 @startuml
-node "Web Server" {
-  artifact "Web Application (UI)" as WebApp
-  WebApp --> "Backend API" : API Requests
+!define RECTANGLE class
+
+package "Frontend Components" {
+  RECTANGLE WebClient {
+    +displayDocumentsList(): void
+    +renderDocumentEditor(documentId: String): void
+    +handleRealTimeCollaboration(documentId: String): void
+    +manageUserAuthentication(): Boolean
+    +integrateNotifications(): void
+    +uploadFilesToCloud(): void
+  }
+
+  RECTANGLE MobileClient {
+    +displayDocumentsList(): void
+    +renderDocumentEditor(documentId: String): void
+    +handleRealTimeCollaboration(documentId: String): void
+    +manageUserAuthentication(): Boolean
+    +integrateNotifications(): void
+    +uploadFilesToCloud(): void
+    +optimizeForOfflineMode(): void
+  }
+
+  RECTANGLE SharedComponents {
+    +HeaderNavBar: ReusableComponent
+    +FooterNavBar: ReusableComponent
+    +SideMenu: ReusableComponent
+    +DocumentCard: ReusableComponent
+    +NotificationWidget: ReusableComponent
+  }
+
+  RECTANGLE RealTimeCollaborationModule {
+    +connectToWebSocket(documentId: String): Boolean
+    +syncCollaborativeEdits(): void
+    +resolveMergeConflicts(): Boolean
+  }
+
+  RECTANGLE AuthModule {
+    +handleLogin(email: String, password: String): Boolean
+    +handleLogout(): void
+    +validateSession(): Boolean
+  }
+
+  RECTANGLE NotificationModule {
+    +displayNotifications(): void
+    +listenForUpdates(): void
+  }
 }
 
-node "Application Server" {
-  component "Backend API" as BackendAPI
-  BackendAPI --> "Document Storage Service" : Accesses Documents
-  BackendAPI --> "Authentication Service" : Verifies User Identity
-  BackendAPI --> "Notification Service" : Sends Notifications
-}
-
-node "Cloud Storage" {
-  component "Document Storage Service" as DocStorage
-}
-
-node "Authentication Provider" {
-  component "Third-Party Authentication" as ThirdPartyAuth
-}
-
-node "User Devices" {
-  artifact "Web Application (UI)" as WebAppUser
-  WebAppUser --> "Web Server" : HTTP Requests
-}
-
-User --> WebAppUser : Uses Web Application
-Admin --> WebAppUser : Manages Platform
-
+WebClient --> SharedComponents : "Uses reusable UI components"
+MobileClient --> SharedComponents : "Uses reusable UI components"
+WebClient --> RealTimeCollaborationModule : "Manages real-time collaboration"
+MobileClient --> RealTimeCollaborationModule : "Manages real-time collaboration"
+WebClient --> AuthModule : "Authenticates user"
+MobileClient --> AuthModule : "Authenticates user"
+WebClient --> NotificationModule : "Handles in-app notifications"
+MobileClient --> NotificationModule : "Handles in-app notifications"
+RealTimeCollaborationModule --> WebSocketServer : "Syncs changes in real-time"
+AuthModule --> Backend.AuthService : "Authenticates with backend"
+NotificationModule --> Backend.NotificationService : "Fetches notifications"
 @enduml
-
 ```
