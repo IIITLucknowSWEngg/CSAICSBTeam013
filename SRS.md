@@ -185,3 +185,7 @@ The application will operate on major web browsers (Chrome, Firefox, Safari, Edg
 ### Happy Path Diagram
 ![Happy Path Diagram](HappyPath.png)
 
+### Abuse Case Diagram
+![Abuse Case Diagram](AbuseCaseDiagram.png)
+
+
