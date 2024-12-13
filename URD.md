@@ -12,10 +12,9 @@ The Google Docs clone will be a **web-based document editing application** that 
 - **User**: An individual who uses the application to create and edit documents.
 - **Admin**: The entity responsible for managing the app’s operations.
 - **RT**: Real-time.
-
 ### 1.4 References
-- `Stakeholders.md`
-- `Project.md`
+- [Stakeholder.md](./Stakeholder.md)
+- [Project.md](./Project.md)
 
 ## 2. User Characteristics
 
