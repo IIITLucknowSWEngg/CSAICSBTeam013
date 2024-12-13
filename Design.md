@@ -30,38 +30,110 @@ The system is a cloud-based, modular platform with three main layers:
 
 ## 3. Architectural Design
 
-### 3.1 Architectural Style
-The system employs a **client-server architecture** using RESTful APIs and WebSocket-based real-time communication. A microservices architecture ensures scalability and modularity.
-
-### 3.2 System Components
-
-#### **Frontend (Web Client)**
-- Framework: React.js
-- Responsible for:
-  - Rendering the user interface
-  - Managing real-time updates and API interactions
-  - Supporting document editing, sharing, and dashboard functionalities
-
-#### **Backend Services**
-- **Authentication Service:** Handles user login, registration, OAuth, and session management.
-- **Document Management Service:** Manages document CRUD operations, real-time collaboration, and versioning.
-- **Notification Service:** Sends email and in-app notifications.
-- **Analytics Service:** Tracks user activity and generates reports.
-
-#### **Database**
-- MongoDB: Primary data store for documents and user data.
-- Redis: Cache for session management and collaborative editing.
-
-#### **External Services**
-- Google Drive API: Cloud storage for documents.
-- Firebase Auth: Third-party authentication provider.
-- Google Cloud Functions: Serverless execution of lightweight tasks.
+### 3 Architectural Style
+The Google Docs system adopts a **microservices architecture** to ensure modularity, scalability, and maintainability. Each core function, such as authentication, document management, and notifications, is handled by distinct services with defined APIs. The system follows a **client-server model**, with a web-based frontend interacting with backend services via REST APIs and WebSockets (for real-time collaboration).
 
 ---
 
-## 4. Component Diagram
-### Diagram
-To be provided.
+## Actors
+
+### User
+
+- **Role**: End users who interact with the system to create, edit, and share documents.  
+- **Key Activities**:
+  - Logging in or signing up.
+  - Creating new documents.
+  - Editing and collaborating in real-time.
+  - Sharing documents via links or direct invitations.
+  - Adding comments and viewing version histories.
+
+### Admin
+
+- **Role**: System administrators responsible for managing platform configurations, monitoring activity, and resolving issues.  
+- **Key Activities**:
+  - Managing user accounts (create, suspend, or delete).
+  - Monitoring system activity and usage metrics.
+  - Configuring platform settings, such as storage limits and permissions.
+  - Generating reports on platform activity.
+
+---
+
+## System Components
+
+### Frontend (Web-Based UI)
+
+- **Description**:
+  - A responsive, user-friendly interface built using React.js.
+  - Provides access to Google Docs functionalities for users and admins.
+- **Responsibilities**:
+  - Rendering document editors and dashboards.
+  - Supporting real-time collaboration with visual updates.
+  - Providing tools for document sharing and role-based permissions.
+- **Key Features**:
+  - Text editing tools, commenting, and version tracking.
+  - Sharing functionality for read and edit access.
+  - Administrative dashboard for monitoring and management.
+
+---
+
+### Backend Services
+
+#### Authentication Service
+- **Responsibilities**:
+  - Manages user login, registration, OAuth, and session tokens.
+  - Secures access using Firebase Authentication.
+  
+#### Document Management Service
+- **Responsibilities**:
+  - Handles CRUD operations for documents.
+  - Supports version history and real-time collaboration using operational transforms or CRDTs.
+
+#### Notification Service
+- **Responsibilities**:
+  - Sends email and in-app notifications for document changes and comments.
+
+#### Analytics Service
+- **Responsibilities**:
+  - Tracks user activity and generates insights for administrators.
+
+- **Technologies**:
+  - Node.js or Python-based microservices communicating via REST and WebSockets.
+
+---
+
+### Database
+
+#### MongoDB
+- Stores document content, user metadata, version histories, and collaboration data.
+
+#### Redis
+- Acts as an in-memory cache for session management and collaborative editing.
+
+---
+
+### External Systems
+
+#### Firebase Authentication
+- Provides secure user authentication using OAuth 2.0 and multi-factor authentication (MFA).
+- Integrates with Google accounts and other third-party identity providers.
+
+#### Google Drive API
+- Manages cloud storage for documents, enabling seamless access and backups.
+
+---
+
+## 4. Interactions Between Components
+
+### User Actions and System Flow
+1. The user logs in through the frontend, which interacts with the Authentication Service.
+2. On successful login, the frontend retrieves the user's documents and permissions via the Document Management Service.
+3. Edits to a document are transmitted via WebSocket to the backend, processed, and broadcast to collaborators.
+4. Notifications for comments or changes are generated and sent by the Notification Service.
+
+### Admin Actions and System Flow
+1. The admin logs into the dashboard to view system metrics.
+2. The Analytics Service retrieves and aggregates data for display.
+3. User management actions (e.g., suspensions) are processed by the Authentication and Document Management Services.
 
 ---
 
