@@ -1,7 +1,7 @@
 # **Stakeholders.md**
 
 ## **1. Introduction**
-This document identifies and defines the key stakeholders involved in the Google Docs Clone project. Stakeholders are categorized into two groups: **Internal Stakeholders** and **External Stakeholders**, each playing a critical role in the development, implementation, and usage of the system.
+This document identifies and defines the key stakeholders involved in the Google Docs Clone project. Stakeholders are categorized into two groups: **Internal Stakeholders** and **External Stakeholders**, each playing a critical role in the development, implementation, and usage of the system. These include all the individuals  and organizations that are affected by the project and take interest in it's success.
 
 ---
 
@@ -33,7 +33,7 @@ This document identifies and defines the key stakeholders involved in the Google
 
 ---
 
-## **5. Conclusion**
+## **4. Conclusion**
 Both internal and external stakeholders are critical to the success of the Google Docs Clone project. The roles and responsibilities outlined above ensure clear communication, seamless development, and robust functionality of the system. Collaboration among all stakeholders will ensure the system meets user needs while adhering to high-quality standards.
 
 ---
