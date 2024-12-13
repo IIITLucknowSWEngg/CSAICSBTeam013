@@ -17,5 +17,3 @@
 | 8.    | Ayush Kumar        | LCI2023021  | ayush2415           | ayushlegion24@gmail.com        |
 | 9.    | Shiv Kaushik       | LCI2023051  | Shiv5818            | shivkaushik5818@gmail.com      |
 
-## User Video
-https://github.com/user-attachments/assets/58b373fa-9fcf-4d5e-ae5e-1fd4da2feca7
