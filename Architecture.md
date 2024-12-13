@@ -21,6 +21,10 @@
 ### Extenal Services Component Diagram
 ![ExternalServices](ComponentDiagram_ExternalServices.png)
 
+# Code
+### Backend Code Diagram
+![Backend](Code_Backend.png)
+
 # Deployment Diagram
 ![DeploymentDiagram](DeploymentDiagram.png)
 
