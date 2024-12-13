@@ -1,41 +1,50 @@
 # Cross-Reference Matrix
 
-The Cross-Reference Matrix maps the relationships between the different features, actors, and system components of the project.
+## Stakeholder Mapping to SRS and URD Sections
 
-| *Feature/Functionality*        | *User* | *Admin* | *WebApp (UI)* | *Backend API*      | *Document Storage Service* | *Authentication Service* | *Notification Service* | *Cloud Storage* | *Third-Party Auth* |
-|----------------------------------|----------|-----------|------------------|-----------------------|------------------------------|----------------------------|---------------------------|-------------------|-----------------------|
-| User Interface (UI)              | ✅        | ✅         | ✅                |                       |                              |                            |                           |                   |                       |
-| Document Creation                | ✅        |           | ✅                | ✅                     | ✅                            |                            |                           |                   |                       |
-| Real-Time Collaboration          | ✅        |           | ✅                | ✅                     | ✅                            |                            |                           |                   |                       |
-| File Sharing                     | ✅        |           | ✅                | ✅                     | ✅                            |                            |                           |                   |                       |
-| Commenting and Suggestions       | ✅        | ✅         | ✅                | ✅                     |                              |                            | ✅                         |                   |                       |
-| Version History                  | ✅        | ✅         | ✅                | ✅                     | ✅                            |                            |                           |                   |                       |
-| User Authentication              | ✅        | ✅         | ✅                | ✅                     |                              | ✅                          |                           |                   | ✅                     |
-| Multi-Factor Authentication      | ✅        | ✅         |                  |                       |                              | ✅                          |                           |                   | ✅                     |
-| Document Management              | ✅        | ✅         | ✅                | ✅                     | ✅                            |                            |                           |                   |                       |
-| Sends Notifications              | ✅        | ✅         |                  | ✅                     |                              |                            | ✅                         |                   |                       |
-| OAuth Login                      | ✅        | ✅         |                  |                       |                              | ✅                          |                           |                   | ✅                     |
-| Stores Documents                 | ✅        | ✅         |                  | ✅                     | ✅                            |                            |                           | ✅                 |                       |
-| Manages Platform                 |          | ✅         | ✅                | ✅                     | ✅                            | ✅                          | ✅                         |                   | ✅                     |
-
----
-
-## Explanation of the Columns
-- *Features/Functionalities*: Describes the functionalities or processes involved in the system.
-- *Actors: Includes **User* and *Admin*—the main people interacting with the system.
-- *System Components*:
-  - *WebApp (UI)*: The user-facing interface for performing operations.
-  - *Backend API*: Handles logic, requests, and data processing.
-  - *Document Storage Service*: Stores and manages documents and their version histories.
-  - *Authentication Service*: Handles login, multi-factor authentication, and identity management.
-  - *Notification Service*: Sends notifications related to comments, changes, etc.
-  - *External Services*:
-    - *Cloud Storage*: Stores documents externally (e.g., AWS S3).
-    - *Third-Party Auth*: Integrates with external authentication providers like OAuth/Firebase.
+| Stakeholder          | SRS Section                            | URD Section                             |
+|----------------------|----------------------------------------|-----------------------------------------|
+| **End Users**         | 2.3 User Classes and Characteristics   | 4.1 Document Creation & Collaboration   |
+|                      | 3.1 Document Creation and Editing      | 4.1.1 Document Creation & Editing       |
+|                      | 3.2 Real-Time Collaboration            | 4.1.2 Real-Time Collaboration           |
+|                      | 3.3 Document Sharing and Permissions   | 4.1.3 Document Sharing & Permissions    |
+|                      | 3.4 Version History                    | 4.1.4 Document Version History          |
+|                      | 3.5 Commenting and Suggestions         | 4.1.5 Commenting & Feedback             |
+| **Administrators**    | 2.3 User Classes and Characteristics   | 4.2 Admin Dashboard & User Management   |
+|                      | 4.4 Communication Interfaces           | 4.2.1 Admin Communication               |
+|                      | 4.5 Non-Functional Requirements        | 4.2.2 Admin System Management           |
+|                      | 5.1 Performance Requirements           | 4.2.3 Admin Performance & Scalability   |
+| **Developers**        | 2.3 User Classes and Characteristics   | 4.3 Developer Tools & Maintenance       |
+|                      | 5.6 Maintainability                    | 4.3.1 Code Maintenance & Updates        |
+| **Cloud Storage**     | 4.3 Software Interfaces                | 4.4 Cloud Storage Integration           |
+| **Authentication API**| 4.3 Software Interfaces                | 4.5 Authentication Integration         |
+| **External APIs**     | 4.3 Software Interfaces                | 4.6 Third-Party Integration            |
 
 ---
 
-## Benefits of the Cross-Reference Matrix
-- *Traceability*: Ensures all features have proper mappings to system components and actors.
-- *Gap Analysis*: Identifies any missing functionality or unconnected components.
-- *Validation*: Helps verify if each requirement is being fulfilled by the system.
+## Functional Requirement Mapping to SRS and URD
+
+| Feature                          | SRS Section                                  | URD Section                                   |
+|-----------------------------------|----------------------------------------------|-----------------------------------------------|
+| **Document Creation**             | 3.1 Document Creation and Editing            | 4.1.1 Document Creation & Editing            |
+| **Real-Time Collaboration**       | 3.2 Real-Time Collaboration                  | 4.1.2 Real-Time Collaboration                |
+| **Document Sharing**              | 3.3 Document Sharing and Permissions         | 4.1.3 Document Sharing & Permissions         |
+| **Version History**               | 3.4 Version History                          | 4.1.4 Document Version History               |
+| **Commenting and Suggestions**    | 3.5 Commenting and Suggestions               | 4.1.5 Commenting & Feedback                  |
+| **Admin Management**              | 4.1 Admin User Management                    | 4.2 Admin Dashboard & System Management      |
+| **Authentication**                | 3.1 User Registration & Authentication       | 4.5 Authentication & User Login              |
+| **Cloud Storage Integration**     | 4.3 Software Interfaces                      | 4.4 Cloud Storage Integration                |
+| **Third-Party API Integration**   | 4.3 Software Interfaces                      | 4.6 Integration with Third-Party APIs        |
+
+---
+
+## Non-Functional Requirements Mapping
+
+| Non-Functional Requirement         | SRS Section                                  | URD Section                                      |
+|------------------------------------|----------------------------------------------|-------------------------------------------------|
+| **Performance**                    | 5.1 Performance Requirements                 | 4.4 Performance Optimization                   |
+| **Security**                       | 5.2 Security Requirements                    | 4.4 Data Security                               |
+| **Availability & Reliability**     | 5.3 Availability and Reliability             | 4.4 System Availability                        |
+| **Scalability**                    | 5.4 Scalability                              | 4.4 Scalability & Load Balancing               |
+| **Usability**                      | 5.5 Usability                                | 4.1 User Experience (UI/UX)                    |
+| **Maintainability**                | 5.6 Maintainability                          | 4.4 System Maintenance & Upgrades              |
