@@ -1,5 +1,5 @@
 # SRS.md
-## 1 Introduction
+## 1. Introduction
 ### 1.1 Purpose
 
 This Software Requirements Specification (SRS) document provides a comprehensive overview of the requirements for the Google Docs clone application. It includes both functional and non-functional requirements and serves as a guideline for developers, testers, and stakeholders throughout the software development lifecycle.
@@ -179,7 +179,9 @@ The application will operate on major web browsers (Chrome, Firefox, Safari, Edg
 - **Localization:** Support regional interface and language settings.  
 - **Ethical Requirements:** Respect user privacy with clear consent for monitoring features.  
 
-## Use Case Diagram
+## 7. Use Case Diagram
 ![Use Case Diagram](UseCaseDiagram.png)
 
+### Happy Path Diagram
+![Happy Path Diagram](HappyPath.png)
 
