@@ -1,14 +1,17 @@
 # System Context Diagram
-![System Context Diagram](systemContextDiagram.png)
+![System Context Diagram](SystemContextDiagram.png)
 
-# Container Diagram
-![Container Diagram](ContainerDiagram.jpg)
-### Admin Container Diagram
-![Container Diagram](AdminDiagram.jpg)
-### User Container Diagram
-![Container Diagram](UserDiagram.jpg)
+# Container Diagrams
+### Frontend Container Diagram
+![Frontend](ContainerDiagram_Frontend.png)
+### Backend Container Diagram
+![Backend](ContainerDiagram_Backend.png)
+### Database Conatiner Diagram
+![Database](ContainerDiagram_Database.png)
+### External Service Diagram
+![ExternalServices](ContainerDiagram_ExternalServices.png)
 
-# Component Diagram
+# Component Diagrams
 ![Component Diagram](ComponentDiagram.jpg)
 ### User Component Diagram
 ![User Component Diagram](UserComponent.jpg)
